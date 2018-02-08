@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EpF-aE-crN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Slack Users-->
+        <scene sceneID="M8w-r2-Ydt">
+            <objects>
+                <tableViewController id="TMQ-4m-aRt" customClass="SlackUsersViewController" customModule="SlackInterview" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="x1Z-3k-PSK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Xzz-cp-fl7">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SlackUserCell" rowHeight="110" id="L2J-Ep-rkO" customClass="SlackUserTableViewCell" customModule="SlackInterview" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="110"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L2J-Ep-rkO" id="bIL-xF-UKw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E2S-md-rKa">
+                                            <rect key="frame" x="16" y="18" width="72" height="72"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="72" id="Fnz-43-eSz"/>
+                                                <constraint firstAttribute="height" constant="72" id="lPF-Gh-wen"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Penelope" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aE-AB-n3H">
+                                            <rect key="frame" x="106" y="18" width="83.5" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                            <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Penelope" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1W-E6-IBj">
+                                            <rect key="frame" x="106" y="47" width="79.5" height="23"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="k1W-E6-IBj" firstAttribute="leading" secondItem="E2S-md-rKa" secondAttribute="trailing" constant="18" id="0le-dt-K8E"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6aE-AB-n3H" secondAttribute="trailing" constant="20" symbolic="YES" id="5xU-tv-sV6"/>
+                                        <constraint firstItem="k1W-E6-IBj" firstAttribute="top" secondItem="6aE-AB-n3H" secondAttribute="bottom" constant="5" id="7zb-cS-M8C"/>
+                                        <constraint firstItem="E2S-md-rKa" firstAttribute="centerY" secondItem="bIL-xF-UKw" secondAttribute="centerY" id="9JL-5k-00d"/>
+                                        <constraint firstItem="6aE-AB-n3H" firstAttribute="top" secondItem="bIL-xF-UKw" secondAttribute="top" constant="18" id="CcX-T1-WFP"/>
+                                        <constraint firstItem="6aE-AB-n3H" firstAttribute="leading" secondItem="E2S-md-rKa" secondAttribute="trailing" constant="18" id="JP3-sG-gjG"/>
+                                        <constraint firstItem="E2S-md-rKa" firstAttribute="leading" secondItem="bIL-xF-UKw" secondAttribute="leading" constant="16" id="QnG-iB-n7C"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="k1W-E6-IBj" secondAttribute="trailing" constant="20" symbolic="YES" id="g7t-ZD-4PQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="realNameLabel" destination="6aE-AB-n3H" id="akL-Ya-zAg"/>
+                                    <outlet property="userImageView" destination="E2S-md-rKa" id="Bxy-vC-yVn"/>
+                                    <outlet property="userNameLabel" destination="k1W-E6-IBj" id="gk8-pZ-WH2"/>
+                                    <segue destination="Lja-Dd-M0K" kind="show" id="W2A-Gn-88L"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TMQ-4m-aRt" id="4fC-3I-fAl"/>
+                            <outlet property="delegate" destination="TMQ-4m-aRt" id="drp-gE-LqZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Slack Users" id="YJp-nb-i4E"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uMG-rt-roe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="581.60000000000002" y="-59.820089955022496"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xE1-WQ-Sfc">
+            <objects>
+                <viewController id="Lja-Dd-M0K" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="24d-Jr-NQX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9AU-bD-VOt">
+                                <rect key="frame" x="91" y="92" width="192" height="192"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="192" id="fTg-Cq-5Q2"/>
+                                    <constraint firstAttribute="width" constant="192" id="ubV-Fy-x6G"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9AU-bD-VOt" firstAttribute="top" secondItem="o1y-n7-Nwf" secondAttribute="top" constant="28" id="L0e-d6-IY4"/>
+                            <constraint firstItem="9AU-bD-VOt" firstAttribute="centerX" secondItem="o1y-n7-Nwf" secondAttribute="centerX" id="uJd-gP-hlG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o1y-n7-Nwf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lu3-KD-5BS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1321" y="-57"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xoq-wC-b77">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EpF-aE-crN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Alb-Po-2cX">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TMQ-4m-aRt" kind="relationship" relationship="rootViewController" id="R6n-mM-iyY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fSE-Hc-OOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-220.80000000000001" y="-58.47076461769116"/>
+        </scene>
+    </scenes>
+</document>
