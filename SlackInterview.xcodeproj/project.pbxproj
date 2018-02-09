@@ -34,6 +34,7 @@
 		5DBC9803202BDE2D006B785A /* SlackUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC9802202BDE2D006B785A /* SlackUserTableViewCell.swift */; };
 		5DBC9805202BE3D3006B785A /* SlackUsersFetchControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC9804202BE3D3006B785A /* SlackUsersFetchControllerFactory.swift */; };
 		5DBC980D202C2E39006B785A /* SlackUsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC980C202C2E39006B785A /* SlackUsersService.swift */; };
+		5DBC980F202C7A7F006B785A /* SlackUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC980E202C7A7F006B785A /* SlackUserDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		5DBC9802202BDE2D006B785A /* SlackUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackUserTableViewCell.swift; sourceTree = "<group>"; };
 		5DBC9804202BE3D3006B785A /* SlackUsersFetchControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackUsersFetchControllerFactory.swift; sourceTree = "<group>"; };
 		5DBC980C202C2E39006B785A /* SlackUsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackUsersService.swift; sourceTree = "<group>"; };
+		5DBC980E202C7A7F006B785A /* SlackUserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackUserDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				5DBC9798202A88DE006B785A /* AppDelegate.swift */,
 				5DBC979A202A88DE006B785A /* SlackUsersViewController.swift */,
 				5DBC979C202A88DE006B785A /* Main.storyboard */,
+				5DBC980E202C7A7F006B785A /* SlackUserDetailViewController.swift */,
 				5DBC9802202BDE2D006B785A /* SlackUserTableViewCell.swift */,
 				5DBC97A2202A88DE006B785A /* Assets.xcassets */,
 				5DBC97A4202A88DE006B785A /* LaunchScreen.storyboard */,
@@ -370,6 +373,7 @@
 				5DBC97DC202A9087006B785A /* SlackError.swift in Sources */,
 				5DBC97CB202A8951006B785A /* CoreDataStack.swift in Sources */,
 				5DBC97EF202A9F38006B785A /* GetSlackUsers.swift in Sources */,
+				5DBC980F202C7A7F006B785A /* SlackUserDetailViewController.swift in Sources */,
 				5DBC97FF202BA79A006B785A /* FileHelper.swift in Sources */,
 				5DBC97F1202A9F5A006B785A /* SlackUser.swift in Sources */,
 				5DBC9803202BDE2D006B785A /* SlackUserTableViewCell.swift in Sources */,

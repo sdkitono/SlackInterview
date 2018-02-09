@@ -46,6 +46,7 @@ class SlackUsersService {
         user.image48 = slackUser.profile?.image48
         user.skype = slackUser.profile?.skype
         user.phone = slackUser.profile?.phone
+        user.title = slackUser.profile?.title
         user.updatedTime = slackUser.updated!
     }
     

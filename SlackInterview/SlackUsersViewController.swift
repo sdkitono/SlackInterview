@@ -39,6 +39,13 @@ class SlackUsersViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SlackUserDetailPushSegue" , let userDetailViewController = segue.destination as? SlackUserDetailViewController {
+            userDetailViewController.detailUser = fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)
+        }
+    }
+    
     //MARK: Internal
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         slackUsersService.fetchAllUsers {
