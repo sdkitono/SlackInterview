@@ -11,9 +11,11 @@ import CoreData
 
 class SlackUsersViewController: UITableViewController {
 
-    lazy var fetchedResultsController: NSFetchedResultsController<User> = SlackUsersFetchControllerFactory.slackUsersFetchedResultsController()
+    lazy var coreDataManager = CoreDataManager()
     
-    lazy var slackUsersService:SlackUsersService = SlackUsersService()
+    lazy var fetchedResultsController: NSFetchedResultsController<User> = SlackUsersFetchControllerFactory.slackUsersFetchedResultsController(context: coreDataManager.coreDataStack.storeContainer.viewContext)
+    
+    lazy var slackUsersService:SlackUsersService = SlackUsersService(coreDataManager: coreDataManager)
     
     override func viewDidLoad() {
         super.viewDidLoad()

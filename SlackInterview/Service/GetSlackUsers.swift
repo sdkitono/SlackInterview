@@ -14,11 +14,7 @@ public struct GetSlackUsers: APIRequest {
     public var resourceName: String {
         return "users.list"
     }
-    
-    public var dataKey: String {
-        return "members"
-    }
-    
+        
     // Parameters
     public let name: String?
     public let nameStartsWith: String?

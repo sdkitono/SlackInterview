@@ -9,14 +9,14 @@
 import CoreData
 
 class SlackUsersFetchControllerFactory {
-    static func slackUsersFetchedResultsController() ->NSFetchedResultsController<User> {
+    static func slackUsersFetchedResultsController(context:NSManagedObjectContext) ->NSFetchedResultsController<User> {
         let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
         let nameSort = NSSortDescriptor(key: #keyPath(User.realName), ascending: true)
         fetchRequest.sortDescriptors = [nameSort]
         
         let fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
-            managedObjectContext: CoreDataManager.sharedInstance().coreDataStack.storeContainer.viewContext,
+            managedObjectContext: context,
             sectionNameKeyPath: nil,
             cacheName: nil)
         

@@ -3,7 +3,7 @@ import Foundation
 /// Implementation of a generic-based Slack API client
 public class SlackAPIClient {
     private let baseEndpoint = "https://slack.com/api/"
-    private let session = URLSession(configuration: .default)
+    var session:URLSessionProtocol = URLSession(configuration: .default)
     
     private let apiToken: String
     
@@ -41,11 +41,9 @@ public class SlackAPIClient {
     }
     
     /// Encodes a URL based on the given request
-    private func endpoint<T: APIRequest>(for request: T) -> URL {
-        guard let parameters = try? URLQueryEncoder.encode(request) else { fatalError("Wrong parameters") }
-        
+    private func endpoint<T: APIRequest>(for request: T) -> URL {        
         // Construct the final URL with all the previous data
-        return URL(string: "\(baseEndpoint)\(request.resourceName)?&token=\(apiToken)&\(parameters)")!
+        return URL(string: "\(baseEndpoint)\(request.resourceName)?&token=\(apiToken)")!
     }
 }
 

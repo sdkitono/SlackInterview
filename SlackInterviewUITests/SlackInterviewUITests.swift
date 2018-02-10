@@ -28,9 +28,19 @@ class SlackInterviewUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testDetailNavigation() {
+        
+        let app = XCUIApplication()
+        app.tables.staticTexts["Anthony Mathur"].tap()
+        
+        XCTAssertTrue(app.tables.staticTexts["anthony"].exists)
+        XCTAssertTrue(app.tables.staticTexts["Anthony Mathur"].exists)
+        XCTAssertTrue(app.tables.staticTexts["Development"].exists)
+        XCTAssertTrue(app.tables.staticTexts["brady+ahmedexercise3@slack-corp.com"].exists)
+        XCTAssertTrue(app.tables.staticTexts["123-131-2221"].exists)
+        XCTAssertTrue(app.tables.staticTexts["anthonym"].exists)
+        
+        app.navigationBars["SlackInterview.SlackUserDetailView"].buttons["Slack Users"].tap()
     }
-    
 }
+
