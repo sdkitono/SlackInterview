@@ -17,9 +17,7 @@ public class SlackAPIClient {
         let urlEndPoint = URLRequest(url: endpoint)
         let task = session.dataTask(with: urlEndPoint) { data, response, error in
             if let data = data {
-                do {
-                    let responseData = String(data: data, encoding: String.Encoding.utf8)
-                    print(responseData!)
+                do { 
                     // Decode the top level response, and look up the decoded response to see
                     // if it's a success or a failure
                     let slackResponse = try JSONDecoder().decode(responseType, from: data)

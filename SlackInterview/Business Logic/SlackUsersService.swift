@@ -22,7 +22,6 @@ class SlackUsersService {
     
     func fetchAllUsers(completion:@escaping ()->()) {
         apiClient.send(GetSlackUsers(),SlackUsersResponse.self) { response in
-            print("\nGetUsers finished:")
             switch response {
             case .success(let members):
                 self.coreDataManager.updateUsersInDatabaseFromSlackUsers(slackUsers: members, completion: { (createdUsers, updatedUsers, deletedUsers) in
