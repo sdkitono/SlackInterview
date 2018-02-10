@@ -73,12 +73,8 @@ class CoreDataManager {
             return
         }
         
-
-        
         let userFetchRequest:NSFetchRequest = User.fetchRequest()
         userFetchRequest.predicate = NSPredicate(format: "id IN %@", argumentArray: Array(deletedMemberSet))
-        
-        
         
         //Here is an implementation using batch delete, Would have used this but because for unit testing, this is not supported for in memory store so i have to use the alternate (old) solution
         /*
