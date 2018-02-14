@@ -40,7 +40,6 @@ class SlackInterviewUITests: XCTestCase {
         XCTAssertTrue(app.tables.staticTexts["123-131-2221"].exists)
         XCTAssertTrue(app.tables.staticTexts["anthonym"].exists)
         
-        app.navigationBars["SlackInterview.SlackUserDetailView"].buttons["Slack Users"].tap()
     }
     
     func testPullRefresh() {

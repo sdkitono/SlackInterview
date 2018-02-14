@@ -28,6 +28,7 @@ class SlackUserDetailViewController: UITableViewController {
         skypeLabel.text = detailUserViewModel.skypeText
         phoneLabel.text = detailUserViewModel.phoneText
         titleLabel.text = detailUserViewModel.titleText
+        self.navigationItem.title = detailUserViewModel.realNameText
     }
 
     override func didReceiveMemoryWarning() {
