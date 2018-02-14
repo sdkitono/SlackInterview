@@ -18,6 +18,8 @@ class SlackInterviewTests: XCTestCase {
     var coreDataManager = CoreDataManager()
     var slackUsersService : SlackUsersService!
     var fetchedResultsController: NSFetchedResultsController<User>!
+    var slackUsersViewModel: SlackUsersViewModel!
+    let mockJsonDataHelper = MockJsonDataHelper()
     
     override func setUp() {
         super.setUp()
@@ -35,18 +37,18 @@ class SlackInterviewTests: XCTestCase {
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        sleep(2)
-        deleteAllUsers()
+        sleep(1)
+        deleteAllUsers(coreDataManager: coreDataManager)
         
         super.tearDown()
     }
-    
+    //MARK: Test Core Data
     func testCreateUsers() {
 
         let createUsersExpectation = expectation(description: "Create users")
         
         // We have a mock data json from network
-        let createData = createDataFromFile(fileString: "createData")
+        let createData = mockJsonDataHelper.createDataFromFile(fileString: "createData")
         let slackUsersResponse = getSlackResponseFromData(data: createData)
         mockSession.nextData = createData
         
@@ -57,10 +59,10 @@ class SlackInterviewTests: XCTestCase {
             try! self.fetchedResultsController.performFetch()
             let users:[User] = self.fetchedResultsController.fetchedObjects!
             XCTAssert(users.count == 3)
-            
+      
             for i in 0..<users.count {
                 let user = users[i]
-                self.testAssertUserWithSlackUser(user: user, slackUser: slackUsersResponse.members![i])
+                testAssertUserWithSlackUser(user: user, slackUser: slackUsersResponse.members![i])
             }
             
             createUsersExpectation.fulfill()
@@ -74,11 +76,11 @@ class SlackInterviewTests: XCTestCase {
         let createUsersAndDeleteExpectation = expectation(description: "Create users then delete")
         
         // We have a mock data json from network
-        let createData = createDataFromFile(fileString: "createNewData")
+        let createData = mockJsonDataHelper.createDataFromFile(fileString: "createNewData")
         let slackUsersResponse = getSlackResponseFromData(data: createData)
         
         // we have mock data where a user is deleted
-        let deleteData = createDataFromFile(fileString: "deleteData")
+        let deleteData = mockJsonDataHelper.createDataFromFile(fileString: "deleteData")
         
         var deletedMembers = slackUsersResponse.members!
         deletedMembers.remove(at: 1)
@@ -98,7 +100,7 @@ class SlackInterviewTests: XCTestCase {
                 
                 for i in 0..<users.count {
                     let user = users[i]
-                    self.testAssertUserWithSlackUser(user: user, slackUser: deletedMembers[i])
+                    testAssertUserWithSlackUser(user: user, slackUser: deletedMembers[i])
                 }
                 
                 createUsersAndDeleteExpectation.fulfill()
@@ -114,10 +116,10 @@ class SlackInterviewTests: XCTestCase {
         let createUsersAndDeleteExpectation = expectation(description: "Create users then delete")
         
         // We have a mock data json from network
-        let createData = createDataFromFile(fileString: "createNewData")
+        let createData = mockJsonDataHelper.createDataFromFile(fileString: "createNewData")
         
         // Mock data with updated user
-        let updateData = createDataFromFile(fileString: "updateData")
+        let updateData = mockJsonDataHelper.createDataFromFile(fileString: "updateData")
         let slackUpdatedUsersResponse = getSlackResponseFromData(data: updateData)
         
         mockSession.nextData = createData
@@ -138,7 +140,7 @@ class SlackInterviewTests: XCTestCase {
                 // Test core data against updated data
                 for i in 0..<users.count {
                     let user = users[i]
-                    self.testAssertUserWithSlackUser(user: user, slackUser: slackUpdatedUsersResponse.members![i])
+                    testAssertUserWithSlackUser(user: user, slackUser: slackUpdatedUsersResponse.members![i])
                 }
                 
                 
@@ -149,41 +151,4 @@ class SlackInterviewTests: XCTestCase {
         
         waitForExpectations(timeout: 10, handler: nil)
     }
-    
-    //MARK: HELPER
-    func testAssertUserWithSlackUser(user:User,slackUser:SlackUser){
-        XCTAssert(user.id == slackUser.id)
-        XCTAssert(user.name == slackUser.name)
-        XCTAssert(user.realName == slackUser.realName)
-        XCTAssert(user.email == slackUser.profile?.email)
-        XCTAssert(user.skype == slackUser.profile?.skype)
-        XCTAssert(user.phone == slackUser.profile?.phone)
-        XCTAssert(user.title == slackUser.profile?.title)
-        XCTAssert(user.updatedTime == slackUser.updated!)
-        XCTAssert(user.image192 == slackUser.profile?.image192)
-        XCTAssert(user.image48 == slackUser.profile?.image48)
-    }
-    
-    func getSlackResponseFromData(data:Data) -> SlackUsersResponse {
-        let slackResponse = try! JSONDecoder().decode(SlackUsersResponse.self, from: data)
-        return slackResponse
-    }
-    
-    func createDataFromFile(fileString:String) -> Data{
-        let path = Bundle(for: type(of: self)).path(forResource: fileString, ofType: "json")
-        let contentString = try! String(contentsOfFile:path!, encoding: String.Encoding.utf8)
-        return contentString.data(using: .utf8)!
-    }
-    
-    func deleteAllUsers() {
-        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        let context = coreDataManager.coreDataStack.managedContext
-        let objs = try! context.fetch(fetchRequest)
-        for case let obj as NSManagedObject in objs {
-            context.delete(obj)
-        }
-        
-        coreDataManager.saveContext()
-    }
-    
 }

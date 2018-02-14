@@ -16,18 +16,18 @@ class SlackUserDetailViewController: UITableViewController {
     @IBOutlet weak var skypeLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    var detailUser: User?
+    var detailUserViewModel: SlackUsersDetailViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         userDetailImageView.layer.cornerRadius = 4
-        userDetailImageView.loadImageUsingCache(withUrl: detailUser!.image192!)
-        usernameLabel.text = detailUser!.name
-        realNameLabel.text = detailUser!.realName
-        emailLabel.text = detailUser!.email
-        skypeLabel.text = detailUser!.skype
-        phoneLabel.text = detailUser!.phone
-        titleLabel.text = detailUser!.title
+        userDetailImageView.loadImageUsingCache(withUrl: detailUserViewModel.userImageUrlString)
+        usernameLabel.text = detailUserViewModel.userNameText
+        realNameLabel.text = detailUserViewModel.realNameText
+        emailLabel.text = detailUserViewModel.emailText
+        skypeLabel.text = detailUserViewModel.skypeText
+        phoneLabel.text = detailUserViewModel.phoneText
+        titleLabel.text = detailUserViewModel.titleText
     }
 
     override func didReceiveMemoryWarning() {

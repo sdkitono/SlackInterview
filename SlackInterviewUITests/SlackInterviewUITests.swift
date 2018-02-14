@@ -42,5 +42,15 @@ class SlackInterviewUITests: XCTestCase {
         
         app.navigationBars["SlackInterview.SlackUserDetailView"].buttons["Slack Users"].tap()
     }
+    
+    func testPullRefresh() {
+        let app = XCUIApplication()
+        let startPosition = CGPoint(x:200,y: 0)
+        let endPosition = CGPoint(x:200,y: 300)
+        let elementToSwipeOn = app.tables.staticTexts["anthony"]
+        let start = elementToSwipeOn.coordinate(withNormalizedOffset: CGVector(dx:0, dy:0)).withOffset(CGVector(dx: startPosition.x, dy: startPosition.y))
+        let finish = elementToSwipeOn.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0)).withOffset(CGVector(dx: endPosition.x, dy: endPosition.y))
+        start.press(forDuration: 0, thenDragTo: finish)
+    }
 }
 

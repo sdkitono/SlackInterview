@@ -20,7 +20,7 @@ class SlackUsersService {
         self.coreDataManager = coreDataManager
     }
     
-    func fetchAllUsers(completion:@escaping ()->()) {
+    func fetchAllUsers(completion:(()->())?) {
         apiClient.send(GetSlackUsers(),SlackUsersResponse.self) { response in
             switch response {
             case .success(let members):
@@ -42,7 +42,7 @@ class SlackUsersService {
                 print(error)
             }
             DispatchQueue.main.async {
-                completion()
+                completion?()
             }
         }
     }

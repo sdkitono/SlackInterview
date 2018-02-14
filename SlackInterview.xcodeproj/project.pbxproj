@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D239C1C2032EEB100918F6D /* UnitTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D239C1B2032EEB100918F6D /* UnitTestHelper.swift */; };
+		5D239C1E2032EFD800918F6D /* MockJsonDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D239C1D2032EFD800918F6D /* MockJsonDataHelper.swift */; };
+		5DA36BEC2032565300535DF5 /* SlackUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA36BEB2032565300535DF5 /* SlackUsersViewModel.swift */; };
+		5DB784242032DDB700BA6189 /* SlackViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB784232032DDB700BA6189 /* SlackViewModelTests.swift */; };
 		5DBC9799202A88DE006B785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC9798202A88DE006B785A /* AppDelegate.swift */; };
 		5DBC979B202A88DE006B785A /* SlackUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC979A202A88DE006B785A /* SlackUsersViewController.swift */; };
 		5DBC979E202A88DE006B785A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBC979C202A88DE006B785A /* Main.storyboard */; };
 		5DBC97A1202A88DE006B785A /* SlackInterview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC979F202A88DE006B785A /* SlackInterview.xcdatamodeld */; };
 		5DBC97A3202A88DE006B785A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DBC97A2202A88DE006B785A /* Assets.xcassets */; };
 		5DBC97A6202A88DE006B785A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBC97A4202A88DE006B785A /* LaunchScreen.storyboard */; };
-		5DBC97B1202A88DF006B785A /* SlackInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC97B0202A88DF006B785A /* SlackInterviewTests.swift */; };
+		5DBC97B1202A88DF006B785A /* SlackCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC97B0202A88DF006B785A /* SlackCoreDataTests.swift */; };
 		5DBC97BC202A88DF006B785A /* SlackInterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC97BB202A88DF006B785A /* SlackInterviewUITests.swift */; };
 		5DBC97CB202A8951006B785A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC97CA202A8951006B785A /* CoreDataStack.swift */; };
 		5DBC97D2202A8EA4006B785A /* SlackAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC97D1202A8EA4006B785A /* SlackAPIClient.swift */; };
@@ -60,6 +64,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D239C1B2032EEB100918F6D /* UnitTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestHelper.swift; sourceTree = "<group>"; };
+		5D239C1D2032EFD800918F6D /* MockJsonDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJsonDataHelper.swift; sourceTree = "<group>"; };
+		5DA36BEB2032565300535DF5 /* SlackUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackUsersViewModel.swift; sourceTree = "<group>"; };
+		5DB784232032DDB700BA6189 /* SlackViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackViewModelTests.swift; sourceTree = "<group>"; };
 		5DBC9795202A88DE006B785A /* SlackInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlackInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBC9798202A88DE006B785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DBC979A202A88DE006B785A /* SlackUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackUsersViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +77,7 @@
 		5DBC97A5202A88DE006B785A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DBC97A7202A88DE006B785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DBC97AC202A88DF006B785A /* SlackInterviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlackInterviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5DBC97B0202A88DF006B785A /* SlackInterviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackInterviewTests.swift; sourceTree = "<group>"; };
+		5DBC97B0202A88DF006B785A /* SlackCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackCoreDataTests.swift; sourceTree = "<group>"; };
 		5DBC97B2202A88DF006B785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DBC97B7202A88DF006B785A /* SlackInterviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlackInterviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBC97BB202A88DF006B785A /* SlackInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackInterviewUITests.swift; sourceTree = "<group>"; };
@@ -125,6 +133,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DA36BEF2032C5AC00535DF5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5DBC979A202A88DE006B785A /* SlackUsersViewController.swift */,
+				5DBC980E202C7A7F006B785A /* SlackUserDetailViewController.swift */,
+				5DBC9802202BDE2D006B785A /* SlackUserTableViewCell.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		5DBC978C202A88DE006B785A = {
 			isa = PBXGroup;
 			children = (
@@ -148,14 +166,12 @@
 		5DBC9797202A88DE006B785A /* SlackInterview */ = {
 			isa = PBXGroup;
 			children = (
+				5DA36BEF2032C5AC00535DF5 /* UI */,
 				5DBC980B202C2E20006B785A /* Business Logic */,
 				5DBC97CC202A8B6A006B785A /* Service */,
 				5DBC97C9202A88FB006B785A /* CoreData */,
 				5DBC9798202A88DE006B785A /* AppDelegate.swift */,
-				5DBC979A202A88DE006B785A /* SlackUsersViewController.swift */,
 				5DBC979C202A88DE006B785A /* Main.storyboard */,
-				5DBC980E202C7A7F006B785A /* SlackUserDetailViewController.swift */,
-				5DBC9802202BDE2D006B785A /* SlackUserTableViewCell.swift */,
 				5DBC97A2202A88DE006B785A /* Assets.xcassets */,
 				5DBC97A4202A88DE006B785A /* LaunchScreen.storyboard */,
 				5DBC97A7202A88DE006B785A /* Info.plist */,
@@ -169,9 +185,12 @@
 			children = (
 				5DBC9815202D7DD2006B785A /* Mock Data */,
 				5DBC9810202D7BEB006B785A /* MockURLSession.swift */,
-				5DBC97B0202A88DF006B785A /* SlackInterviewTests.swift */,
+				5DBC97B0202A88DF006B785A /* SlackCoreDataTests.swift */,
+				5DB784232032DDB700BA6189 /* SlackViewModelTests.swift */,
 				5DBC97B2202A88DF006B785A /* Info.plist */,
 				5DBC9819202D813A006B785A /* MockCoreData.swift */,
+				5D239C1B2032EEB100918F6D /* UnitTestHelper.swift */,
+				5D239C1D2032EFD800918F6D /* MockJsonDataHelper.swift */,
 			);
 			path = SlackInterviewTests;
 			sourceTree = "<group>";
@@ -225,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				5DBC9804202BE3D3006B785A /* SlackUsersFetchControllerFactory.swift */,
+				5DA36BEB2032565300535DF5 /* SlackUsersViewModel.swift */,
 				5DBC980C202C2E39006B785A /* SlackUsersService.swift */,
 			);
 			path = "Business Logic";
@@ -382,6 +402,7 @@
 				5DBC9818202D7FC4006B785A /* MockURLSession.swift in Sources */,
 				5DBC979B202A88DE006B785A /* SlackUsersViewController.swift in Sources */,
 				5DBC97F5202B9080006B785A /* SlackUsersResponse.swift in Sources */,
+				5DA36BEC2032565300535DF5 /* SlackUsersViewModel.swift in Sources */,
 				5DBC97FB202B972D006B785A /* CoreDataManager.swift in Sources */,
 				5DBC97ED202A9BCA006B785A /* SlackResponse.swift in Sources */,
 				5DBC9805202BE3D3006B785A /* SlackUsersFetchControllerFactory.swift in Sources */,
@@ -409,8 +430,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DBC981A202D813A006B785A /* MockCoreData.swift in Sources */,
-				5DBC97B1202A88DF006B785A /* SlackInterviewTests.swift in Sources */,
+				5D239C1E2032EFD800918F6D /* MockJsonDataHelper.swift in Sources */,
+				5DB784242032DDB700BA6189 /* SlackViewModelTests.swift in Sources */,
+				5DBC97B1202A88DF006B785A /* SlackCoreDataTests.swift in Sources */,
 				5DBC9823202E68F4006B785A /* SlackInterview.xcdatamodeld in Sources */,
+				5D239C1C2032EEB100918F6D /* UnitTestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
