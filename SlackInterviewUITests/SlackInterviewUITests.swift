@@ -50,6 +50,17 @@ class SlackInterviewUITests: XCTestCase {
         let start = elementToSwipeOn.coordinate(withNormalizedOffset: CGVector(dx:0, dy:0)).withOffset(CGVector(dx: startPosition.x, dy: startPosition.y))
         let finish = elementToSwipeOn.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0)).withOffset(CGVector(dx: endPosition.x, dy: endPosition.y))
         start.press(forDuration: 0, thenDragTo: finish)
+        
+        // Assert all data is still there after pulling refresh
+        XCTAssertTrue(app.tables.staticTexts["Anthony Mathur"].exists)
+        XCTAssertTrue(app.tables.staticTexts["Laura Michaels"].exists)
+        XCTAssertTrue(app.tables.staticTexts["Natalie George"].exists)
+        XCTAssertTrue(app.tables.staticTexts["Nolan Caudill"].exists)
+        XCTAssertTrue(app.tables.staticTexts["Rudolf Jean"].exists)
+        XCTAssertTrue(app.tables.staticTexts["Steve Stevella"].exists)
+        XCTAssertTrue(app.tables.staticTexts["Teresa Dodson"].exists)
+        XCTAssertTrue(app.tables.staticTexts["slackbot"].exists)
+        
     }
 }
 
