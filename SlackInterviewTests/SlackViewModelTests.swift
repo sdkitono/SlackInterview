@@ -11,9 +11,6 @@ import CoreData
 @testable import SlackInterview
 
 class SlackViewModelTests: XCTestCase {
-    
-    
-    
     var mockCoreData = MockCoreData()
     let mockSession = MockURLSession()
     var coreDataManager = CoreDataManager()

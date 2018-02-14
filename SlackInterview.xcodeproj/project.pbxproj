@@ -133,14 +133,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5DA36BEF2032C5AC00535DF5 /* UI */ = {
+		5DA36BEF2032C5AC00535DF5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				5DBC979A202A88DE006B785A /* SlackUsersViewController.swift */,
 				5DBC980E202C7A7F006B785A /* SlackUserDetailViewController.swift */,
 				5DBC9802202BDE2D006B785A /* SlackUserTableViewCell.swift */,
 			);
-			path = UI;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		5DBC978C202A88DE006B785A = {
@@ -166,7 +166,7 @@
 		5DBC9797202A88DE006B785A /* SlackInterview */ = {
 			isa = PBXGroup;
 			children = (
-				5DA36BEF2032C5AC00535DF5 /* UI */,
+				5DA36BEF2032C5AC00535DF5 /* Presentation */,
 				5DBC980B202C2E20006B785A /* Business Logic */,
 				5DBC97CC202A8B6A006B785A /* Service */,
 				5DBC97C9202A88FB006B785A /* CoreData */,
